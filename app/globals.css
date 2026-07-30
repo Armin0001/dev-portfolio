@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Standard CSS fallback that works in all browsers and Tailwind v4 */
+.custom-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem; /* The gap size between text and lines */
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.custom-heading::before,
+.custom-heading::after {
+  content: "";
+  flex: 1; /* Automatically stretches the line across the gap */
+  height: 25px; /* Line thickness */
+  background-color: #2563eb; /* Blue line color */
+  min-width: 20px; /* Ensures lines don't collapse on small screens */
+}
+
+/* app/globals.css */
+
+@utility image-pixelated {
+  image-rendering: pixelated;
+}
+
+@utility image-crisp {
+  image-rendering: crisp-edges; /* Fallback rendering style */
+}
+
+/* 2. Target direct adjacent images (+ img) if using a parent wrapper utility */
+@utility pixel-gallery {
+  & img {
+    max-inline-size: 100%;
+    image-rendering: pixelated;
+  }
+
+  & img + img {
+    image-rendering: crisp-edges;
+  }
+}

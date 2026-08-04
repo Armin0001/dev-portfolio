@@ -79,6 +79,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 className="btn-secondary-light text-xs flex items-center gap-2"
               >
                 <span>View Repository</span>
+                <ExternalLink className="w-3.5 h-3.5" />
               </AudioLink>
             )}
           </div>

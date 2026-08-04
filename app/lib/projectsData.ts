@@ -30,7 +30,8 @@ export const projectsData: Project[] = [
       'Next.js App Router for SSG/ISR static performance.',
       'Three.js / Custom GLSL shaders for WebGL GPU rendering.',
       'Tailwind CSS for responsive layout utility bounds.'
-    ]
+    ],
+    demoUrl: 'https://ether-perfume-qtox.vercel.app'
   },
   {
     id: 'aura-flow',
@@ -49,7 +50,8 @@ export const projectsData: Project[] = [
       'React 19 Hooks for local optimistic state management.',
       'Tailwind CSS v4 for clean theme tokens.',
       'HTML5 Drag and Drop API with custom drop-indicator animations.'
-    ]
+    ],
+    demoUrl: 'https://aura-flow-ivory.vercel.app'
   },
   {
     id: 'cinescope',
@@ -68,7 +70,8 @@ export const projectsData: Project[] = [
       'Angular 18 Signals for fine-grained reactivity.',
       'RxJS operators (switchMap, debounceTime) for clean API request orchestration.',
       'TMDB REST API with local caching strategies.'
-    ]
+    ],
+    demoUrl: 'https://cinescope-lilac.vercel.app'
   },
   {
     id: 'ticket-filter-system',
@@ -87,7 +90,8 @@ export const projectsData: Project[] = [
       'Next.js App Router with Server Components.',
       'Firebase Firestore for indexed database queries.',
       'TypeScript for strict payload type safety.'
-    ]
+    ],
+    demoUrl: 'https://ticket-filter-system.vercel.app'
   },
   {
     id: 'excalidraw-ai',
@@ -106,7 +110,8 @@ export const projectsData: Project[] = [
       'Cloudflare Workers for serverless edge execution.',
       'Excalidraw API for dynamic canvas element injection.',
       'TypeScript for strict structural schema validation.'
-    ]
+    ],
+    repoUrl: 'https://github.com/Armin0001/excalidraw-ai'
   }
 ];
 

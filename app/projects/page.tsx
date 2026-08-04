@@ -1,17 +1,18 @@
 'use client';
 
 import Link from 'next/link';
-import { Code2, ArrowRight } from 'lucide-react';
+import { Code2, ArrowRight, ExternalLink } from 'lucide-react';
 import { useAudio } from '@/app/context/AudioContext'; // Adjust path if using relative import like "../context/AudioContext"
 
-const projects = [
+export const projects = [
   {
     id: 'ether-perfume',
     title: 'Ether Perfume',
     image: '/assets/images/ether.png',
     tags: ['Next.js', 'WebGL / GLSL', 'GSAP'],
     accentTag: 'Next.js',
-    description: 'Interactive product landing page rendering GPU-accelerated particle systems synchronized with scroll motion.'
+    description: 'Interactive product landing page rendering GPU-accelerated particle systems synchronized with scroll motion.',
+    demoUrl: 'https://ether-perfume-qtox.vercel.app'
   },
   {
     id: 'aura-flow',
@@ -19,7 +20,8 @@ const projects = [
     image: '/assets/images/aura.png',
     tags: ['React 19', 'Tailwind v4', 'Local Storage'],
     accentTag: 'React 19',
-    description: 'Productivity workspace featuring drag-and-drop Kanban boards, focus timer, and subtask checklists.'
+    description: 'Productivity workspace featuring drag-and-drop Kanban boards, focus timer, and subtask checklists.',
+    demoUrl: 'https://aura-flow-ivory.vercel.app'
   },
   {
     id: 'cinescope',
@@ -27,7 +29,8 @@ const projects = [
     image: '/assets/images/cinescope.png',
     tags: ['Angular 18', 'TMDB API', 'RxJS'],
     accentTag: 'Angular 18',
-    description: 'Entertainment discovery application built with Angular 18 and TMDB API for responsive media browsing.'
+    description: 'Entertainment discovery application built with Angular 18 and TMDB API for responsive media browsing.',
+    demoUrl: 'https://cinescope-lilac.vercel.app'
   },
   {
     id: 'ticket-filter-system',
@@ -35,7 +38,8 @@ const projects = [
     image: '/assets/images/ticket.png',
     tags: ['Next.js', 'Firebase Firestore', 'TypeScript'],
     accentTag: 'Next.js',
-    description: 'Multi-criteria ticket filtering application performing low-latency query lookups on Firestore.'
+    description: 'Multi-criteria ticket filtering application performing low-latency query lookups on Firestore.',
+    demoUrl: 'https://ticket-filter-system.vercel.app'
   },
   {
     id: 'excalidraw-ai',
@@ -43,7 +47,8 @@ const projects = [
     image: '/assets/images/excalidraw.png',
     tags: ['TypeScript', 'Cloudflare Workers', 'Excalidraw API'],
     accentTag: 'TypeScript',
-    description: 'Diagramming UI converting natural language text descriptions into visual Excalidraw canvas layouts.'
+    description: 'Diagramming UI converting natural language text descriptions into visual Excalidraw canvas layouts.',
+    repoUrl: 'https://github.com/Armin0001/excalidraw-ai'
   }
 ];
 
@@ -71,6 +76,7 @@ export default function ProjectsPage() {
             <div className="img-wrapper-light aspect-video relative">
               <img src={project.image} alt={project.title} className="object-cover w-full h-full" />
             </div>
+            
             <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
               <div className="space-y-2">
                 <div className="flex flex-wrap gap-1.5">
@@ -90,14 +96,40 @@ export default function ProjectsPage() {
                   {project.description}
                 </p>
               </div>
-              <Link
-                href={`/projects/${project.id}`}
-                onClick={playSound}
-                className="btn-secondary-light text-xs w-full py-2 flex items-center justify-center gap-1"
-              >
-                <span>Read Case Study</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
+
+              {/* Action Buttons */}
+              <div className="space-y-2 pt-2">
+                {project.demoUrl && (
+                  <a
+                    href={project.demoUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-primary-light text-xs w-full py-2 flex items-center justify-center gap-1.5"
+                  >
+                    <span>Live Preview</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                )}
+                {project.repoUrl && (
+                  <a
+                    href={project.repoUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-primary-light text-xs w-full py-2 flex items-center justify-center gap-1.5"
+                  >
+                    <span>View Repository</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                )}
+                <Link
+                  href={`/projects/${project.id}`}
+                  onClick={playSound}
+                  className="btn-secondary-light text-xs w-full py-2 flex items-center justify-center gap-1"
+                >
+                  <span>Read Case Study</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
             </div>
           </article>
         ))}

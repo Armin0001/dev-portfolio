@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+
 import {
   Code,
   ArrowRight,
@@ -15,15 +16,28 @@ import { useAudio } from "@/app/context/AudioContext";
 
 export default function HomePage() {
   const { playSound } = useAudio();
-
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/syabro/neat-annotations/neat-annotations.css"
+  ></link>;
   return (
     <section className="page-view active-page">
       {/* Grounded Hero Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <div className="max-w-3xl space-y-8">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-mono">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 text-indigo-700 text-xs font-mono">
             <Code className="w-3.5 h-3.5" />
-            <span>FRONTEND ENGINEER & UI SPECIALIST</span>
+            <span>
+              FRONTEND ENGINEER &{" "}
+              <span
+                className="ann ann-w ann-blue"
+                data-note="check out my projects"
+                style={{ "--ann-label-max-width": "220px" } as React.CSSProperties}
+                
+              >
+                 UI SPECIALIST
+              </span>
+            </span>
           </div>
 
           <h1 className="custom-heading font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15] w-full text-center">
@@ -43,25 +57,27 @@ export default function HomePage() {
 
           {/* Verified Experience Metrics */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 border-y border-slate-200 py-6 max-w-3xl w-full font-mono">
-  <div>
-    <span className="block text-2xl font-bold text-slate-900">
-      3+ Years
-    </span>
-    <span className="text-xs text-slate-500">Professional Exp.</span>
-  </div>
-  <div>
-    <span className="block text-xl sm:text-2xl font-bold text-indigo-600">
-      React + Next.js
-    </span>
-    <span className="text-xs text-slate-500">Frontend Stack</span>
-  </div>
-  <div>
-    <span className="block text-xl sm:text-2xl font-bold text-emerald-600">
-      WCAG & Vitals
-    </span>
-    <span className="text-xs text-slate-500">Accessibility & Perf</span>
-  </div>
-</div>
+            <div>
+              <span className="block text-2xl font-bold text-slate-900">
+                3+ Years
+              </span>
+              <span className="text-xs text-slate-500">Professional Exp.</span>
+            </div>
+            <div>
+              <span className="block text-xl sm:text-2xl font-bold text-indigo-600">
+                React + Next.js
+              </span>
+              <span className="text-xs text-slate-500">Frontend Stack</span>
+            </div>
+            <div>
+              <span className="block text-xl sm:text-2xl font-bold text-emerald-600">
+                WCAG & Vitals
+              </span>
+              <span className="text-xs text-slate-500">
+                Accessibility & Perf
+              </span>
+            </div>
+          </div>
 
           {/* Hero Action CTAs */}
           <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -122,7 +138,14 @@ export default function HomePage() {
                 <Gauge className="w-5 h-5" />
               </div>
               <h3 className="font-heading font-bold text-base text-slate-900">
+                <span
+                className="ann ann-sw ann-blue ann-no-mark"
+                data-note="fast load times, smooth interactions, happier users"
+                style={{ "--ann-label-max-width": "120px" } as React.CSSProperties}
+                
+              >
                 Web Performance
+              </span>
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Optimizing Core Web Vitals through code splitting, lazy asset
